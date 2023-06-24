@@ -1,4 +1,5 @@
 recipe_grabber/config.txt
+recipe_grabber/update_notion.py
 recipe_grabber/openai_config.txt
 recipe_grabber/__pycache__
 recipe_grabber/.vscode
