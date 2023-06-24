@@ -1,0 +1,63 @@
+anchovy
+bass
+bluefish
+buffalo fish
+butterfishc
+calamari
+carp
+catfish
+chilean sea bass
+clam
+cod
+blue crab
+king crab
+snow crab
+crawfish
+crayfish
+croaker
+flounderg
+golden snapper
+grouperh
+haddock
+hake
+halibut
+herringj
+jack
+jacksmeltk
+king mackerell
+lobster
+mackerel
+mahi mahi
+marlin
+mulleto
+orange roughy
+oysters
+perch
+perch
+pickerel
+plaice
+pollock
+pompano
+rainbow trout
+sablefish
+salmon
+sardine
+scallop
+scorpion fish
+sea trout
+shad
+shark
+shrimp
+snapper
+sole
+spanish mackerel
+squid
+swordfisht
+tilapia
+tilefish
+tuna
+walleye 
+weakfish
+white croaker
+whitefish
+whiting

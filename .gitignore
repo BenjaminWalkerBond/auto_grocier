@@ -1,0 +1,5 @@
+recipe_grabber/config.txt
+recipe_grabber/openai_config.txt
+recipe_grabber/__pycache__
+recipe_grabber/.vscode
+recipe_grabber/recognized-kernel-66-66.txt
