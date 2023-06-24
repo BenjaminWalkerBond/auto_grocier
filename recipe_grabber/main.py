@@ -97,7 +97,7 @@ def login(driver):
     time.sleep(4)
     login_button.click()
     random_time()
-    file = open("D:\python_projects\\auto_grocier\\recipe_grabber\config.txt", "r")
+    file = open("D:\python_projects\\auto_grocier\\recipe_grabber\HEB_config.txt", "r")
     login_info = file.read().split("\n")
     email = driver.find_element(By.XPATH, "/html/body/div[1]/div/div/div/div/div[2]/form/fieldset/div[1]/input")
     email.send_keys(login_info[0])

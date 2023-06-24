@@ -1,7 +1,7 @@
 import os
 import openai
 
-file = open("openai_config.txt", "r")
+file = open("openai_HEB_config.txt", "r")
 
 openai_config = file.read().split("\n")
 openai.organization = openai_config[0]
