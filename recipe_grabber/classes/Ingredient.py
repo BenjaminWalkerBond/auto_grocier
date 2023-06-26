@@ -5,13 +5,13 @@ class Ingredient(IngredientList):
         self.name = name
         self.amount = amount
         self.unit = unit
-        self.tag = Ingredient.setTag(self, self.name)
+        self.tag = Ingredient.set_tag(self, self.name)
         print(self.tag)
     def __str__(self):
-        return f"{self.name} : {self.tag}"
-    def setTag(self, ingredientName):
-        # print("getTag Ingredient")
-        return super().getTag(ingredientName)
+        return f"{self.amount} {self.unit} {self.name} : {self.tag}"
+    def set_tag(self, ingredientName):
+        # print("get_tag Ingredient")
+        return super().get_tag(ingredientName)
     def get_name(self):
         return self.name
     def get_tag(self):

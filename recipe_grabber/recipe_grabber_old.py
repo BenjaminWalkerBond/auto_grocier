@@ -209,7 +209,7 @@ def populate_ingredient_list():
                 # print("NAME", "X" + name + "X")
                 IL.add_ingredient(Ingredient(temp))
                 temp = ""
-        IL.showList()
+        IL.show_list()
         result = ""
         ingredient_flag = True
         ingredient_found = False
@@ -275,5 +275,5 @@ def populate_ingredient_list():
         #         #     print("UNIT", unit)
         #         #     print("NAME", "X" + name + "X")
 
-        # # IL.showList()
+        # # IL.show_list()
     return IL

@@ -28,12 +28,13 @@ class IngredientList:
         self.init_dicts();
         self.ingredients = []
     def add_ingredient(self, ingredient):
-        self.ingredients.append(ingredient)
+        if ingredient.get_tag() is not None:
+            self.ingredients.append(ingredient)
     def remove_last_ingredient(self):
         return self.ingredients.pop()
 
     # need to alter algorithim to search for compound words like "green beans"
-    def getTag(self,ingredientName):
+    def get_tag(self,ingredientName):
         ingredientName = ingredientName.lower()
         tag=self.tags_dict.get(ingredientName)
         # check if self.tags.get(ingredientName) is not in the dictionary
@@ -49,12 +50,12 @@ class IngredientList:
                     break
         else:
             print()
-        print("getTag IngredientList")
+        print("get_tag IngredientList")
         print("ingredientName: ", ingredientName)
         return tag
     def get_ingredients(self):
         return self.ingredients
-    def showList(self):
+    def show_list(self):
         print("INGREDIENT LIST: \n")
         for ingredient in self.ingredients:
             print(ingredient)

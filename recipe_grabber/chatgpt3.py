@@ -1,7 +1,12 @@
 import os
 import openai
 
-file = open("config.txt", "r")
+# find the absolute path of the file called config.txt in the current directory
+file_path = os.path.join(os.path.dirname(__file__), 'config.txt')
+# open the file in read mode
+file = open(file_path, "r")
+# split the file into a list of strings
+
 
 openai_config = file.read().split("\n")
 openai.organization = openai_config[2]
@@ -54,7 +59,7 @@ def get_ingredients_gpt_txt(txt):
     verified = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "user", "content": "Please verify that the following text seperates each distinct ingredient by a comma: " + completion.choices[0].message.content + " \n. If it does not, please insert commas where appropriate and return ONLY the list of comma separated ingredients. DO NOT include any other text."}
+            {"role": "user", "content": "Please verify that the following text separates each distinct ingredient by a comma, and that the format of INGREDIENT: AMOUNT UNIT, INGREDIENT: AMOUNT UNIT, etc. was followed: " + completion.choices[0].message.content + " \n. If it does not, please insert commas where appropriate and return ONLY the list of comma separated ingredients. DO NOT include any other text."}
         ],
         # frequency_penalty=2.0,
     )  
