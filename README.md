@@ -130,7 +130,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    pip install requirements.txt
    ```
-4. Enter your API key(s) in `openai_HEB_config.txt` and enter your HEB login credentials in `HEB_config.txt`
+4. Enter your API key(s) in `openai_config.txt` and enter your HEB login credentials in `config.txt`
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```

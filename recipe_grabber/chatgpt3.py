@@ -1,11 +1,11 @@
 import os
 import openai
 
-file = open("openai_HEB_config.txt", "r")
+file = open("config.txt", "r")
 
 openai_config = file.read().split("\n")
-openai.organization = openai_config[0]
-openai.api_key = openai_config[1]
+openai.organization = openai_config[2]
+openai.api_key = openai_config[3]
 # filter the json object by the json attribute "id" and print it
 # list = openai.Model.list()
 # list.data.sort(key=lambda x: x.id)
