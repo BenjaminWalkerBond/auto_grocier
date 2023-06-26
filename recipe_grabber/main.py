@@ -110,9 +110,12 @@ def login(driver):
     random_time()
 if __name__ == '__main__':
 
+    # url_list = [
+    #     "https://www.cookingclassy.com/skillet-seared-salmon-with-garlic-lemon-butter-sauce/",
+    #     "https://www.recipetineats.com/spaghetti-bolognese/",
+    # ]
     url_list = [
         "https://www.cookingclassy.com/skillet-seared-salmon-with-garlic-lemon-butter-sauce/",
-        "https://www.recipetineats.com/spaghetti-bolognese/",
     ]
     # initialize the ingredient list
     IL = populate_ingredient_list(url_list)

@@ -1,4 +1,5 @@
 import os
+import time
 import openai
 
 # find the absolute path of the file called config.txt in the current directory
@@ -52,14 +53,14 @@ def get_ingredients_gpt_txt(txt):
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo-16k",
         messages=[
-            {"role": "user", "content": "Please grab the ingredients and their measurements from the following text and return them in a comma seperated list in this format: INGREDIENT: AMOUNT UNIT. Make sure to only grab the ingredients from the ingredient section, and do not count ingredients twice. The ingredient section will look like this: Ingredients1 pound wild caught large shrimp with shells4 tablespoons extra virgin olive oil , divided4 cloves garlic , pressed or minced1 teaspoon kosher salt½ teaspoon red pepper flakes4 tablespoons butter⅓ cup white wine or chicken stock2 tablespoons fresh lemon juice , or ½ lemon1 tablespoon minced parsley" + txt + " \n"}
+            {"role": "user", "content": "Please grab the ingredients and their measurements from the following text and return them in a comma seperated list in this format: AMOUNT UNIT: INGREDIENT. Make sure to only grab the ingredients from the ingredient section, and do not count ingredients twice. " + txt + " \n"}
         ]
     )
 
     verified = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "user", "content": "Please verify that the following text separates each distinct ingredient by a comma, and that the format of INGREDIENT: AMOUNT UNIT, INGREDIENT: AMOUNT UNIT, etc. was followed: " + completion.choices[0].message.content + " \n. If it does not, please insert commas where appropriate and return ONLY the list of comma separated ingredients. DO NOT include any other text."}
+            {"role": "user", "content": "Please verify that the following text separates each distinct ingredient by a comma, and that the format of AMOUNT UNIT: INGREDIENT, AMOUNT UNIT: INGREDIENT , etc. was followed: " + completion.choices[0].message.content + " \n. If it does not, please insert commas where appropriate and return ONLY the list of comma separated ingredients. DO NOT include any other text."}
         ],
         # frequency_penalty=2.0,
     )  
