@@ -109,6 +109,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+# Get OpenAI API key
+Get an API Key at [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
+
 # Install Python 
 [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
@@ -121,16 +124,16 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get an API Key at [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
-2. Clone the repo
+
+1. Clone the repo
    ```sh
    git clone https://github.com/BenjaminWalkerBond/auto_grocier.git
    ```
-3. Install python packages
+2. Install python packages
    ```sh
    pip install requirements.txt
    ```
-4. Enter your HEB login credentials on line 1 and 2 and your API organization id and key on line 3 and 4 of `config.txt`
+3. Enter your HEB login credentials on line 1 and 2 and your API organization id and key on line 3 and 4 of `config.txt`
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
