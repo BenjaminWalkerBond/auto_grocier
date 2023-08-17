@@ -1,0 +1,9 @@
+beautifulsoup4==4.12.2
+matplotlib==3.7.2
+numpy==1.25.2
+openai==0.27.8
+pyautogui==0.9.54
+pytesseract==0.3.10
+Requests==2.31.0
+selenium==4.11.2
+undetected_chromedriver==3.5.2

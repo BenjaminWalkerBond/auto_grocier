@@ -115,10 +115,6 @@ Get an API Key at [https://platform.openai.com/account/api-keys](https://platfor
 # Install Python 
 [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-# activate virtual env
-.\env\Scripts\activate
-
-This is an example of how to list things you need to use the software and how to install them.
 
 ### Installation
 
@@ -137,7 +133,35 @@ _Below is an example of how you can instruct your audience on installing and set
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
+# Install virtualenv
+```sh
+pip install virtualenv
+```
 
+# Create virtual environment
+```sh
+ python<version> -m venv <virtual-environment-name> 
+```
+
+# Activate virtual env
+```sh
+.\<virtual-environment-name>\Scripts\activate
+```
+  OR
+```sh
+source env/bin/activate
+```
+
+# Install requirements
+```sh
+pip3 install -r requirements.txt
+```
+# Create config.txt
+```sh
+Enter your HEB login credentials on line 1 and 2 and your API organization id and key on line 3 and 4 of `config.txt`
+```
+
+This is an example of how to list things you need to use the software and how to install them.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

@@ -7,3 +7,4 @@ recipe_grabber/recipe_grabber_old.py
 recipe_grabber/*.log
 recipe_grabber/screenshots/*.png
 recipe_grabber/screenshots/*.jpg
+venv/

@@ -13,10 +13,11 @@ openai_config = file.read().split("\n")
 openai.organization = openai_config[2]
 openai.api_key = openai_config[3]
 # filter the json object by the json attribute "id" and print it
-# list = openai.Model.list()
-# list.data.sort(key=lambda x: x.id)
-# for model in list.data:
-#     print(model.id)
+list = openai.Model.list()
+list.data.sort(key=lambda x: x.id)
+for model in list.data:
+    print(model.id)
+
 
 
 def get_ingredients_gpt(url_list):
@@ -26,14 +27,14 @@ def get_ingredients_gpt(url_list):
     for url in url_list:
 
         completion = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4",
             messages=[
                 {"role": "user", "content": "Please grab the ingredients from this url and return them in a comma seperated list: " + url + " \n"}
             ]
         )
         print("chat gpt response: " + completion.choices[0].message.content)
         verified = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4",
             messages=[
                 {"role": "user", "content": "Please verify that the following text seperates each distinct ingredient by a comma: " + completion.choices[0].message.content + " \n. If it does not, please insert commas where appropriate and return the list of comma separated ingredients. Do not include any other text."}
             ],
@@ -58,7 +59,7 @@ def get_ingredients_gpt_txt(txt):
     )
 
     verified = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
             {"role": "user", "content": "Please verify that the following text separates each distinct ingredient by a comma, and that the format of AMOUNT UNIT: INGREDIENT, AMOUNT UNIT: INGREDIENT , etc. was followed: " + completion.choices[0].message.content + " \n. If it does not, please insert commas where appropriate and return ONLY the list of comma separated ingredients. DO NOT include any other text."}
         ],
