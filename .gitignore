@@ -1,10 +1,7 @@
-recipe_grabber/config.txt
-recipe_grabber/update_notion.py
-recipe_grabber/__pycache__
-recipe_grabber/.vscode
-recipe_grabber/recognized-kernel-66-66.txt
-recipe_grabber/recipe_grabber_old.py
-recipe_grabber/*.log
-recipe_grabber/screenshots/*.png
-recipe_grabber/screenshots/*.jpg
+config.txt
+output.txt
+__pycache__
+.vscode
+recognized-kernel-66-66.txt
+*.log
 venv/

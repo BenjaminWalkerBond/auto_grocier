@@ -109,6 +109,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+Install pipenv
+Install pyenv
+NOTES: Use pipenv lock -r > requirements.txt to generate requirements file.
+
 # Get OpenAI API key
 Get an API Key at [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
 
@@ -131,7 +135,10 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 3. Enter your HEB login credentials on line 1 and 2 and your API organization id and key on line 3 and 4 of `config.txt`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   username
+   password
+   org_key
+   api_key
    ```
 # Install virtualenv
 ```sh
