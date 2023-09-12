@@ -142,22 +142,7 @@ _Below is an example of how you can instruct your audience on installing and set
    org_key
    api_key
    ```
-# Install pipenv
-```sh
-brew install pipenv
-```
 
-# Install Requiements and Create Virtual Environment
-```sh
- pipenv install
-```
-
-# Create config.txt
-```sh
-Enter your HEB login credentials on line 1 and 2 and your API organization id and key on line 3 and 4 of `config.txt`
-```
-
-This is an example of how to list things you need to use the software and how to install them.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
