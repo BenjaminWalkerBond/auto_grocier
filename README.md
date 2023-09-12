@@ -166,6 +166,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [X] Refactor project structure to use pipenv and pyenv
 - [ ] Find alternative to Selenium (Something like Browse AI)
 - [ ] Improve chatgpt ingredient accuracy
+- [ ] Move to local chatgpt4 implementation for cost saving ( maybe https://github.com/KillianLucas/open-interpreter )
 
 See the [open issues](https://github.com/BenjaminWalkerBond/auto_grocier/issues) for a full list of proposed features (and known issues).
 
