@@ -94,7 +94,9 @@
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Selenium
+BeautifulSoup4
+OpenAI
 
 
 
@@ -131,7 +133,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 2. Install python packages
    ```sh
-   pip install requirements.txt
+   pipenv install
    ```
 3. Enter your HEB login credentials on line 1 and 2 and your API organization id and key on line 3 and 4 of `config.txt`
    ```js
@@ -140,29 +142,16 @@ _Below is an example of how you can instruct your audience on installing and set
    org_key
    api_key
    ```
-# Install virtualenv
+# Install pipenv
 ```sh
-pip install virtualenv
+brew install pipenv
 ```
 
-# Create virtual environment
+# Install Requiements and Create Virtual Environment
 ```sh
- python<version> -m venv <virtual-environment-name> 
+ pipenv install
 ```
 
-# Activate virtual env
-```sh
-.\<virtual-environment-name>\Scripts\activate
-```
-  OR
-```sh
-source env/bin/activate
-```
-
-# Install requirements
-```sh
-pip3 install -r requirements.txt
-```
 # Create config.txt
 ```sh
 Enter your HEB login credentials on line 1 and 2 and your API organization id and key on line 3 and 4 of `config.txt`
@@ -187,11 +176,11 @@ Use this space to show useful examples of how a project can be used. Additional 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add Changelog
+- [ ] Add Ability to checkout
 - [ ] Add Examples
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [X] Refactor project structure to use pipenv and pyenv
+- [ ] Find alternative to Selenium (Something like Browse AI)
+- [ ] Improve chatgpt ingredient accuracy
 
 See the [open issues](https://github.com/BenjaminWalkerBond/auto_grocier/issues) for a full list of proposed features (and known issues).
 
@@ -265,5 +254,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [chatgpt-url]: https://openai.com/blog/chatgpt
