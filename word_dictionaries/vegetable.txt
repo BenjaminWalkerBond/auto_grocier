@@ -265,6 +265,7 @@ sea beet
 sea grape
 sea kale
 sea lettuce
+shallot
 shallots
 shiso/ohba
 sierra leone bologi

@@ -49,6 +49,13 @@ class IngredientList:
                 if check_word is not None:
                     tag = self.tags_dict.get(word)
                     break
+            i = 0
+            while i < len(ingredientName)-1:
+                compound_word = ingredientName[i] + " " + ingredientName[i+1]
+                if self.tags_dict.get(compound_word) is not None:
+                    tag = self.tags_dict.get(compound_word)
+                    break
+                i += 1
         else:
             print()
         print("get_tag IngredientList")

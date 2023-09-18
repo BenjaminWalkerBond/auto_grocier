@@ -26,12 +26,37 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from update_notion import add_grocery_item
 
-# pytesseract.pytesseract.tesseract_cmd = r'D:\Tesseract-OCR\tesseract.exe'
 
+def clean_ingredient(ingredient):
+        # filter out everything that is not a character, a space, or a number
+    print("ingredient before char, space, and num only: ", ingredient)
+    cleaned_ingredient = re.sub(r'[^a-zA-Z0-9\s$]', '', ingredient)
+    print("cleaned_ingredient after char, space, and num only: ", cleaned_ingredient)
 
-def clean_ingredient(ingr):
+    # remove all conjunctions from the line
+    cleaned_ingredient = re.sub(r'\b(?:to|of|cause|after|agin|albeit|also|altho|although|an|and|and/or|as|assuming|because|before|being|both|but|conjunction|directly|either|ere|ergo|except|excepting|for|how|howbeit|however|if|immediately|instantly|lest|like|neither|nor|notwithstanding|now|once|only|or|ossia|plus|provided|providing|save|saving|seeing|since|sith|slash|so|supposing|syne|than|that|tho|though|til|till|unless|until|what|when|whenas|whence|whencesoever|whenever|whensoever|where|whereas|whereat|whereby|wherefrom|wherein|whereinto|whereof|wheresoever|wherethrough|whereto|whereupon|wherever|wherewith|wherewithal|whether|while|whiles|whilst|whither|why|without|yet)\b', '', cleaned_ingredient)
+    print("cleaned_ingredient after conjunction: ", cleaned_ingredient)
+    # create a variable called pre_amount that removes everything in the word in parenthesis
+    pre_amount = re.sub(r'\([^)]*\)', '', cleaned_ingredient)
+    amount = re.findall(r'\d+', pre_amount)
+    
+    # get unit from line
+    unit = re.findall(r'\b(?:optional|tsp|tbsp|cup|oz|lb|g|kg|ml|l|pinch|dash|can|jar|bottle|slice|slices|sliced|piece|pieces|stalk|stalks|head|heads|leaf|leaves|bunch|bunches|bag|bags|box|boxes|package|packages|container|containers|bowl|bowls|pint|pints|quart|quarts|gallon|gallons|stick|sticks|sprig|sprigs|sprinkle|sprinkles|handful|handfuls|pinch|pinches|dash|dashes|teaspoon|teaspoons|tablespoon|tablespoons|clove|cloves|head|heads|inch|inches|ounce|ounces|pound|pounds|gram|grams|kilogram|kilograms|milliliter|milliliters|liter|liters|milligram|milligrams|gallon|gallons|quart|quarts|pint|pints|cup|cups|tablespoon|tablespoons|teaspoon|teaspoons|pinch|pinches|dash|dashes|sprinkle|sprinkles|handful|handfuls|slice|slices|piece|pieces|stalk|stalks|head|heads|leaf|leaves|bunch|bunches|bag|bags|box|boxes|package|packages|container|containers|bowl|bowls|stick|sticks|sprig|sprigs|sprinkle|sprinkles|handful|handfuls|pinch|pinches|dash|dashes|teaspoon|teaspoons|tablespoon)\b', cleaned_ingredient)
+    
+    # get name from line
+    name = re.findall(r'[a-zA-Z]+', cleaned_ingredient)
+    
+    # remove unit from name
+    for u in unit:
+        try:
+            name.remove(u)
+        except ValueError:
+            pass
+    
+    # rejoin name
+    name = " ".join(name)
 
-    return ingr
+    return name, amount, unit
 def screenshot_url(url):
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
@@ -79,9 +104,6 @@ def screenshot_url(url):
     time.sleep(10)
     driver.quit()
 
-
-
-
 def populate_ingredient_list(url_list):
 
     debug = True
@@ -112,46 +134,18 @@ def populate_ingredient_list(url_list):
         print("ingredient_list_array: ", ingredient_list_array)
         for ingredient in ingredient_list_array:
             print("Ingredient: ", ingredient)
-            text = ingredient.split(",")
-            for line in text:
-                print("line: ", line)\
-                # filter out everything that is not a character, a space, or a number
-                line = re.sub(r'[^a-z0-9\s$]', '', line)
+            print(f"Cleaning the ingredient: {ingredient}\n")
+            cleaned_ingredient_tuple = clean_ingredient(ingredient)
+            print(cleaned_ingredient_tuple)
 
-                # # remove all conjunctions from the line
-                line = re.sub(r'\b(?:to|of|cause|after|agin|albeit|also|altho|although|an|and|and/or|as|assuming|because|before|being|both|but|conjunction|directly|either|ere|ergo|except|excepting|for|how|howbeit|however|if|immediately|instantly|lest|like|neither|nor|notwithstanding|now|once|only|or|ossia|plus|provided|providing|save|saving|seeing|since|sith|slash|so|supposing|syne|than|that|tho|though|til|till|unless|until|what|when|whenas|whence|whencesoever|whenever|whensoever|where|whereas|whereat|whereby|wherefrom|wherein|whereinto|whereof|wheresoever|wherethrough|whereto|whereupon|wherever|wherewith|wherewithal|whether|while|whiles|whilst|whither|why|without|yet)\b', '', line)
+            # Unpack the tuple into name, amount, and unit variables
+            name, amount, unit = cleaned_ingredient_tuple
 
-                # create a variable called pre_amount that removes everything in the word in parenthesis
-                pre_amount = re.sub(r'\([^)]*\)', '', line)
-                amount = re.findall(r'\d+', pre_amount)
-                # # // get unit from line
-                unit = re.findall(r'\b(?:optional|tsp|tbsp|cup|oz|lb|g|kg|ml|l|pinch|dash|can|jar|bottle|slice|slices|sliced|piece|pieces|stalk|stalks|head|heads|leaf|leaves|bunch|bunches|bag|bags|box|boxes|package|packages|container|containers|bowl|bowls|pint|pints|quart|quarts|gallon|gallons|stick|sticks|sprig|sprigs|sprinkle|sprinkles|handful|handfuls|pinch|pinches|dash|dashes|teaspoon|teaspoons|tablespoon|tablespoons|clove|cloves|head|heads|inch|inches|ounce|ounces|pound|pounds|gram|grams|kilogram|kilograms|milliliter|milliliters|liter|liters|milligram|milligrams|gallon|gallons|quart|quarts|pint|pints|cup|cups|tablespoon|tablespoons|teaspoon|teaspoons|pinch|pinches|dash|dashes|sprinkle|sprinkles|handful|handfuls|slice|slices|piece|pieces|stalk|stalks|head|heads|leaf|leaves|bunch|bunches|bag|bags|box|boxes|package|packages|container|containers|bowl|bowls|stick|sticks|sprig|sprigs|sprinkle|sprinkles|handful|handfuls|pinch|pinches|dash|dashes|teaspoon|teaspoons|tablespoon)\b', line)
-                # # // get name from line
-  
-                name = re.findall(r'[a-z]+', line)
-             # # // remove unit from name
-                for u in unit:
-                    try: name.remove(u)
-                    except ValueError: pass
-                # rejoin name
-
-                name = " ".join(name)
-
-                # add to ingredient list
-                IL.add_ingredient(Ingredient(name, amount, unit))
-                print("ADDING INGREDIENT", name)
-                print("AMOUNT", amount)
-                print("UNIT", unit)
-                # IL.add_ingredient(Ingredient(line))
-                # IL.add_ingredient(ingredient)
-
-            # IL = IngredientList()
-            # Test = Ingredient("test")
-            # IL.add_ingredient(Ingredient("italian seasoning"))
-            # IL.add_ingredient(Ingredient("brazil nut"))
-            # IL.add_ingredient(Ingredient("Lemon"))
-            # IL.add_ingredient(Ingredient("Garlic"))
-            # IL.add_ingredient(Ingredient("Turmeric")) 
+            # add to ingredient list
+            IL.add_ingredient(Ingredient(name, amount, unit))
+            print("ADDING INGREDIENT", name)
+            print("AMOUNT", amount)
+            print("UNIT", unit)
     return IL
 
 
