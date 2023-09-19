@@ -83,6 +83,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+This project aims to consume any url from the web, get the ingredients from that webpage using chatgpt, 
+and automatically place an order to H-E-B for all ingredients. It was built to help with my girlfriend's dietary restrictions (severe tree nut allergy) which makes
+eating out a difficult process. Furthermore, it helps solves the problem of meal service cross contamination by making you your own meal service. The project has a tagging function that tags all ingredients. In the future, it will omit any recipes that contain tree nuts before placing an order.
+
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 
