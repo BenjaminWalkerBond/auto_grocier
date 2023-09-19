@@ -175,6 +175,9 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [ ] Move to local chatgpt4 implementation for cost saving ( maybe https://github.com/KillianLucas/open-interpreter )
 - [ ] Move package management to poetry
 - [ ] Enhance login to automatically grab verification code from email if sent
+- [ ] Add hit rate (ingredients found in text versus tagged)
+- [ ] Add recipe storage ( probably private class object in Ingredient List )
+- [ ] Add recipe class
 
 See the [open issues](https://github.com/BenjaminWalkerBond/auto_grocier/issues) for a full list of proposed features (and known issues).
 
