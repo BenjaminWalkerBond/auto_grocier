@@ -1,5 +1,4 @@
 import os
-import time
 import openai
 
 # find the absolute path of the file called config.txt in the current directory
@@ -69,6 +68,8 @@ def get_ingredients_gpt_txt(txt):
     ingredient_list.append(verified.choices[0].message.content)
     return ingredient_list
 
+def get_recipe_gpt_txt(txt):
+    return 0
 # url_list = [
 #     "https://www.cookingclassy.com/skillet-seared-salmon-with-garlic-lemon-butter-sauce/",
 # ]

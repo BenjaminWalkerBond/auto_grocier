@@ -1,14 +1,4 @@
-# import pytesseract
-# import cv2
 import re
-
-# import numpy as np
-# import matplotlib.pyplot as plt         # displaying output images
-
-import pyautogui
-pyautogui.FAILSAFE = True
-import time
-
 import requests
 from bs4 import BeautifulSoup
 
@@ -18,13 +8,6 @@ from classes.IngredientList import IngredientList
 from classes.Ingredient import Ingredient
 
 from chatgpt3 import get_ingredients_gpt_txt
-
-
-import undetected_chromedriver as uc
-import os
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from update_notion import add_grocery_item
 
 
 def clean_ingredient(ingredient):
