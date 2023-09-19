@@ -228,7 +228,7 @@ if __name__ == '__main__':
     # IL.show_list()
 
     # command to install chromedriver on ubuntu:
-    # 
+    
     # chrome_binary_path = '/usr/bin/google-chrome'
     # driver = uc.Chrome(executable_path=chrome_binary_path, se_subprocess=True, version_main=116)
     # # driver.get('https://nowsecure.nl')
@@ -251,8 +251,18 @@ if __name__ == '__main__':
 
     
     # # add all ingredients to the cart
-    # for ing in IL.get_ingredients():
+    # while IL.get_ingredients():
     #     add_ingredient(IL.remove_last_ingredient(), driver)
     #     random_time()
 
+
+    # testing pop
+        # add all ingredients to the cart
+    while IL.get_ingredients():
+        print("pop returns: ", IL.remove_last_ingredient())
+        print()
+    # for ing in IL.get_ingredients():
+    #     print("ing: ", ing)
+    #     print("pop returns: ", IL.remove_last_ingredient())
+        # random_time()
     # time.sleep(50)

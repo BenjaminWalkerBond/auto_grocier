@@ -5,3 +5,4 @@ __pycache__
 recognized-kernel-66-66.txt
 *.log
 venv/
+pre_process/

@@ -16,3 +16,8 @@ class Ingredient(IngredientList):
         return self.name
     def get_tag(self):
         return self.tag
+    def get_amount(self):
+        return self.amount
+    def get_unit(self):
+        return self.unit
+    
