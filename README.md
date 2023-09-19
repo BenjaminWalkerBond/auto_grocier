@@ -114,11 +114,7 @@ To get a local copy up and running follow these simple example steps.
 1. Install pipenv
 2. Install pyenv
 
-{% note %}
-
 **Note:** Use pipenv lock -r > requirements.txt to generate requirements file.
-
-{% endnote %}
 
 # Get OpenAI API key
 Get an API Key at [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
