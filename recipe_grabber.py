@@ -11,14 +11,14 @@ from chatgpt3 import get_ingredients_gpt_txt
 
 
 def clean_ingredient(ingredient):
-        # filter out everything that is not a character, a space, or a number
-    print("ingredient before char, space, and num only: ", ingredient)
+    # filter out everything that is not a character, a space, or a number
+    # print("ingredient before char, space, and num only: ", ingredient)
     cleaned_ingredient = re.sub(r'[^a-zA-Z0-9\s$]', '', ingredient)
-    print("cleaned_ingredient after char, space, and num only: ", cleaned_ingredient)
+    # print("cleaned_ingredient after char, space, and num only: ", cleaned_ingredient)
 
     # remove all conjunctions from the line
     cleaned_ingredient = re.sub(r'\b(?:to|of|cause|after|agin|albeit|also|altho|although|an|and|and/or|as|assuming|because|before|being|both|but|conjunction|directly|either|ere|ergo|except|excepting|for|how|howbeit|however|if|immediately|instantly|lest|like|neither|nor|notwithstanding|now|once|only|or|ossia|plus|provided|providing|save|saving|seeing|since|sith|slash|so|supposing|syne|than|that|tho|though|til|till|unless|until|what|when|whenas|whence|whencesoever|whenever|whensoever|where|whereas|whereat|whereby|wherefrom|wherein|whereinto|whereof|wheresoever|wherethrough|whereto|whereupon|wherever|wherewith|wherewithal|whether|while|whiles|whilst|whither|why|without|yet)\b', '', cleaned_ingredient)
-    print("cleaned_ingredient after conjunction: ", cleaned_ingredient)
+    # print("cleaned_ingredient after conjunction: ", cleaned_ingredient)
     # create a variable called pre_amount that removes everything in the word in parenthesis
     pre_amount = re.sub(r'\([^)]*\)', '', cleaned_ingredient)
     amount = re.findall(r'\d+', pre_amount)

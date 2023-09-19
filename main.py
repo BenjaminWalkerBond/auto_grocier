@@ -202,9 +202,9 @@ if __name__ == '__main__':
     # initialize the ingredient list
     IL = IngredientList()
     for ingredient in ingredient_list_array:
-        print(f"Cleaning the ingredient: {ingredient}\n")
+        # print(f"Cleaning the ingredient: {ingredient}\n")
         cleaned_ingredient_tuple = clean_ingredient(ingredient)
-        print(cleaned_ingredient_tuple)
+        # print(cleaned_ingredient_tuple)
 
         # Unpack the tuple into name, amount, and unit variables
         name, amount, unit = cleaned_ingredient_tuple

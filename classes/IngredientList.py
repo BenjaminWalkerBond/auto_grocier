@@ -15,7 +15,7 @@ class IngredientList:
         for path in os.scandir(os.path.join(parent_dir, "word_dictionaries")):
             # print(path)
             if path.is_file() and path.name.endswith(".txt"):
-                print("path.name is: " + path.name)
+                print("Creating tags from dictionary from: " + path.name)
                 with open(path.path) as f:
                     for line in f:
                         # print("line is: "+line.strip()+"\n")
@@ -23,7 +23,7 @@ class IngredientList:
             x += 1
        
         #  initialize each dictionary with their respective word files
-        print("initialized tag dictionary")
+        print("Initialized all tag dictionaries \n")
         
         self.tags_dict["eggs"] = "eggs"
         self.tags_dict["milk"] = "milk"
@@ -58,8 +58,8 @@ class IngredientList:
                 i += 1
         else:
             print()
-        print("get_tag IngredientList")
-        print("ingredientName: ", ingredientName)
+        # print("get_tag IngredientList")
+        # print("ingredientName: ", ingredientName)
         return tag
     def get_ingredients(self):
         return self.ingredients

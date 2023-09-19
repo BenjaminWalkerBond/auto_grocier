@@ -6,7 +6,7 @@ class Ingredient(IngredientList):
         self.amount = amount
         self.unit = unit
         self.tag = Ingredient.set_tag(self, self.name)
-        print(self.tag)
+        # print(self.tag)
     def __str__(self):
         return f"{self.amount} {self.unit} {self.name} : {self.tag}"
     def set_tag(self, ingredientName):
