@@ -69,9 +69,9 @@ def get_ingredients_gpt_txt(txt):
     ingredient_list.append(verified.choices[0].message.content)
     return ingredient_list
 
-url_list = [
-    "https://www.cookingclassy.com/skillet-seared-salmon-with-garlic-lemon-butter-sauce/",
-]
+# url_list = [
+#     "https://www.cookingclassy.com/skillet-seared-salmon-with-garlic-lemon-butter-sauce/",
+# ]
 
 # test the function
 # print(get_ingredients_gpt(url_list))

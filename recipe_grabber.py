@@ -57,52 +57,6 @@ def clean_ingredient(ingredient):
     name = " ".join(name)
 
     return name, amount, unit
-def screenshot_url(url):
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized")
-    options.add_argument("--window-size=1920x1080")
-    driver = uc.Chrome(options=options)
-
-    driver.get(url)
-
-    # set the driver width to a fourth of the screen height
-    
-    pyautogui.press('f11')
-    time.sleep(7)
-
-    # get the height of the page using a max function
-    height = driver.execute_script("return document.body.scrollHeight")
-    chunks = 2
-    chunk_size = int(height / chunks)
-    for i in range(chunks-1):
-        # scroll to the bottom of the page
-        pyautogui.screenshot('screenshots/my_screenshot_'+ str(i) +'.png')
-        pyautogui.scroll(-chunk_size)
-        # wait for the page to load
-        time.sleep(0.2)
-
-    # print all files names in the screenshots directory
-
-    # image_list = []
-    # for filename in os.listdir('screenshots'):
-    #     if filename.endswith('.png'):
-    #         img = cv2.imread(os.path.join('screenshots', filename))
-    #         if img is not None:
-    #             image_list.append(img)
-    # print(image_list)
-    # # stitch together images
-    # stitched_image = cv2.vconcat(image_list)
-    
-    # if(os.path.exists('screenshots/stitched_image.png')):
-    #     os.remove('screenshots/stitched_image.png')
-
-    # cv2.imwrite('screenshots/stitched_image.png', stitched_image)
-    
-    # stich together all images in the screenshots directory
-
-    driver.execute_script("console.log('hello world');")
-    time.sleep(10)
-    driver.quit()
 
 def populate_ingredient_list(url_list):
 
