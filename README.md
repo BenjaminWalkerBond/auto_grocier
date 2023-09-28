@@ -175,7 +175,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [ ] Add Ability to checkout
 - [ ] Add Examples
 - [X] Refactor project structure to use pipenv and pyenv
-- [ ] Find alternative to Selenium (Something like Browse AI)
+- [ ] Find alternative to static references to css selectors (Something like Browse AI)
 - [ ] Improve chatgpt ingredient accuracy
 - [ ] Move to local chatgpt4 implementation for cost saving ( maybe https://github.com/KillianLucas/open-interpreter )
 - [ ] Move package management to poetry

@@ -15,12 +15,17 @@ for url in url_list:
         soup = BeautifulSoup(response.content, "html.parser")
 
         # Find all the text on the webpage
-        text = soup.get_text()
+        # text = soup.get_text()
+
+        # Find all the html on the webpage
+        
         # Remove newlines and extra spaces in the text
         text = " ".join(text.split())
 
         # print the first 200 characters of the text
         print(text[:200])
+
+
 
 # # URL of the webpage you want to extract text from
 # url = "https://www.recipetineats.com/spaghetti-bolognese/"
